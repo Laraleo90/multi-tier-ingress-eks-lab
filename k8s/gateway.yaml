@@ -1,0 +1,16 @@
+# k8s/gateway.yaml
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: app-gateway
+  namespace: demo
+spec:
+  gatewayClassName: traefik
+  listeners:
+    - name: web
+      protocol: HTTP
+      port: 8000
+      hostname: "lara.diogohack.shop"
+      allowedRoutes:
+        namespaces:
+          from: Same
