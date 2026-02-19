@@ -106,4 +106,4 @@ jobs:
       - name: Smoke test
         run: |
           curl -sf "http://${INGRESS_HOST}/api/ping" && echo " ✓ Backend reachable"
- 
+  
